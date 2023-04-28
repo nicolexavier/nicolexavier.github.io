@@ -53,10 +53,12 @@ html, body
   justify-content: space-between
   align-items: center
 
-  height: 3rem
+  height: 5%
   width: 100%
 
   background-color: #024A59
+
+  z-index: 9999
 
 #logo-container
   display: flex
@@ -70,7 +72,7 @@ html, body
 
   color: $nav-font-color
   font-weight: 700
-  font-size: 1.5rem
+  font-size: calc(1vw + 1vh)
 
   img
     height: 90%
@@ -96,7 +98,7 @@ html, body
 
     color: $nav-font-color
 
-    font-size: 1.3rem
+    font-size: calc(0.8vw + 0.8vh)
     text-decoration: none
 
   a:hover
