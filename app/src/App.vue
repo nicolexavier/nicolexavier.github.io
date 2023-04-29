@@ -58,6 +58,8 @@ html, body
 
   background-color: #024A59
 
+  font-weight: 700
+
   z-index: 9999
 
 #logo-container
@@ -66,13 +68,13 @@ html, body
   justify-content: center
   align-items: center
 
-  margin-left: 5rem
+  margin-left: 5%
 
   height: 90%
 
   color: $nav-font-color
-  font-weight: 700
-  font-size: calc(1vw + 1vh)
+
+  font-size: clamp(1rem, 1vw + 0.5rem, 5rem)
 
   img
     height: 90%
@@ -85,9 +87,11 @@ html, body
   justify-content: space-between
   align-items: center
 
-  width: 20%
+  width: max(12rem, 20%)
 
-  margin-right: 5rem
+  margin-right: 5%
+
+  font-size: clamp(0.5rem, 0.75vw + 0.25rem, 5rem)
 
   a
     padding: 0.5rem
@@ -98,15 +102,14 @@ html, body
 
     color: $nav-font-color
 
-    font-size: calc(0.8vw + 0.8vh)
     text-decoration: none
 
   a:hover
     background-color: black
 
-    -webkit-transition: all 0.75s ease-in
-    -moz-transition: all 0.75s ease-in
-    -o-transition: all 0.75s ease-in
-    -ms-transition: all 0.75s ease-in
-    transition: all 0.75s ease-in
+    -webkit-transition: all 0.75s ease-out
+    -moz-transition: all 0.75s ease-out
+    -o-transition: all 0.75s ease-out
+    -ms-transition: all 0.75s ease-out
+    transition: all 0.75s ease-out
 </style>
