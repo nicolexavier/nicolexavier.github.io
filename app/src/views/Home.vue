@@ -1,15 +1,42 @@
 <template>
   <div id="main-content">
-    <div id="introduction">
-      <div id="introduction-container">
-        <div id="introduction-content-first">Oi!</div>
-        <div id="introduction-content-line"></div>
-        <div id="introduction-content-second">Eu sou a Nicole</div>
-        <div id="introduction-content-third">e sou UX/UI Designer.</div>
+    <section id="introduction">
+      <div id="container">
+        <div id="content-first">Oi!</div>
+        <div id="content-line"></div>
+        <div id="content-second">Eu sou a Nicole</div>
+        <div id="content-third">e sou UX/UI Designer.</div>
       </div>
+      <div id="face-image"></div>
+    </section>
 
-      <div id="introduction-image"></div>
-    </div>
+    <section id="uxui-works">
+      <span id="header"> Esses são alguns dos meus trabalhos de UX/UI: </span>
+      <div class="item">
+        <div class="item-text-content">
+          <span>Nara Rubens</span>
+          <span>Curso de Micropigmentação</span>
+        </div>
+        <div class="item-image"></div>
+      </div>
+      <div class="item">
+        <div class="item-text-content">
+          <span>Artig</span>
+          <span
+            >Plataforma de compartilhamento e venda de peças de arte
+            autorais.</span
+          >
+        </div>
+        <div class="item-image"></div>
+      </div>
+    </section>
+
+    <section id="ui-works">
+      <span id="header">
+        E aqui tem alguns dos meus trabalhos apenas de UI:
+      </span>
+      <div id="item"></div>
+    </section>
   </div>
 </template>
 
@@ -24,74 +51,151 @@ export default defineComponent({
 <style lang="sass">
 $base-color-green: #024A59
 $base-color-orange: #BF5B05
+$base-color-grey: #CCCCCC
 
 #main-content
   height: 100%
   width: 100%
 
-  position: relative
+  overflow-y: scroll
 
 #introduction
-  height: 100%
+  height: 100vh
   width: 100%
 
-#introduction-container
-  position: absolute
+  display: flex
+  flex-direction: column
 
-  width: 100%
+  #container
+    display: flex
+    flex-direction: column
 
-  top: 30%
+    width: 100%
 
-  line-height: 0
+    margin-top: 20vh
 
-#introduction-content-first
-  margin-left: 12%
+  #content-first
+    margin-left: 12%
 
-  color: $base-color-green
+    color: $base-color-green
 
-  line-height: 0
-  font-weight: 400
-  font-size: calc(3vh + 3vw)
+    font-weight: 400
+    font-size: 4rem
 
-#introduction-content-line
-  width: 20%
-  height: 0.3vh
+  #content-line
+    width: 40%
+    height: 0.25rem
 
-  margin-top: 3%
+    background-color: $base-color-orange
 
-  background-color: $base-color-orange
+  #content-second
+    align-self: center
 
-#introduction-content-second
-  color: $base-color-green
+    margin-top: 5%
 
-  margin-top: 3%
-  margin-left: 10%
+    color: $base-color-green
 
-  line-height: 0
-  font-weight: 400
-  font-size: calc(3vh + 3vw)
+    font-weight: 500
+    font-size: 2.5rem
 
-#introduction-content-third
-  color: $base-color-green
+  #content-third
+    align-self: center
 
-  margin-left: 18%
-  margin-top: 4%
+    color: $base-color-green
 
-  line-height: 0
-  font-weight: 400
-  font-size: calc(1vh + 1vw)
+    font-weight: 400
+    font-size: 1rem
 
-#introduction-image
-  position: absolute
+  #face-image
+    align-self: center
 
-  height: 70%
-  width: 15%
+    height: 15rem
+    width: 15rem
 
-  top: 5%
-  left: 70%
+    margin-top: 20%
 
-  background-color: black
+    background-color: black
 
-  border-bottom-left-radius: 15rem
-  border-bottom-right-radius: 15rem
+    border-radius: 10rem
+
+#uxui-works
+  height: 50vh
+
+  display: flex
+  flex-direction: column
+
+  #header
+    align-self: center
+
+    text-align: center
+
+    color: $base-color-green
+    font-weight: 600
+    font-size: 1.5rem
+
+  .item
+    width: 75%
+
+    margin-top: 10%
+
+    padding: 1rem
+
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-items: center
+    align-items: center
+
+    background-color: $base-color-orange
+
+    border-top-right-radius: 5rem
+    border-bottom-right-radius: 5rem
+
+    transition: all 0.5s ease-in-out
+
+  .item:hover
+    width: 85%
+
+  .item-text-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    gap: 0.5rem
+
+    text-align: center
+    color: $base-color-grey
+    font-size: 0.75rem
+    font-weight: 500
+
+    :first-child
+      font-size: 1rem
+      font-weight: bold
+
+  .item-image
+    height: 5rem
+    width: 5rem
+
+    border-radius: 3rem
+
+    background-color: black
+
+#ui-works
+  height: 50vh
+
+  background-color: $base-color-green
+
+  display: flex
+  flex-direction: column
+
+  #header
+    margin-top: 10%
+
+    align-self: center
+
+    text-align: center
+
+    color: $base-color-grey
+    font-weight: 600
+    font-size: 1.4rem
 </style>
