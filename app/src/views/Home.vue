@@ -4,10 +4,12 @@
       <div id="container">
         <div id="content-first">Oi!</div>
         <div id="content-line"></div>
-        <div id="content-second">Eu sou a Nicole</div>
+        <div id="content-second">Eu sou a <span>Nicole</span></div>
         <div id="content-third">e sou UX/UI Designer.</div>
       </div>
-      <div id="face-image"></div>
+      <div id="face-image">
+        <div id="background"><img src="@/assets/selfie.png" /></div>
+      </div>
     </section>
 
     <section id="uxui-works">
@@ -101,6 +103,8 @@ $base-color-green: #024A59
 $base-color-orange: #BF5B05
 $base-color-grey: #CCCCCC
 
+$breakpoint-mobile: 400px
+
 #main-content
   height: 100%
   width: 100%
@@ -114,6 +118,12 @@ $base-color-grey: #CCCCCC
   display: flex
   flex-direction: column
 
+  @media (min-width: $breakpoint-mobile)
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+
   #container
     display: flex
     flex-direction: column
@@ -122,19 +132,30 @@ $base-color-grey: #CCCCCC
 
     margin-top: 20vh
 
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 0
+
+      width: 70%
+
   #content-first
-    margin-left: 12%
+    margin-left: 22%
 
     color: $base-color-green
 
     font-weight: 400
     font-size: 4rem
 
+    @media (min-width: $breakpoint-mobile)
+      font-size: 6rem
+
   #content-line
-    width: 40%
+    width: 50%
     height: 0.25rem
 
     background-color: $base-color-orange
+
+    @media (min-width: $breakpoint-mobile)
+      width: 24vw
 
   #content-second
     align-self: center
@@ -146,6 +167,19 @@ $base-color-grey: #CCCCCC
     font-weight: 500
     font-size: 2.5rem
 
+    @media (min-width: $breakpoint-mobile)
+      align-self: flex-start
+
+      margin-top: 1%
+      margin-left: 25%
+
+      font-size: 5rem
+      font-weight: 400
+
+    span
+      background-color: black
+      mix-blend-mode: difference
+
   #content-third
     align-self: center
 
@@ -154,17 +188,61 @@ $base-color-grey: #CCCCCC
     font-weight: 400
     font-size: 1rem
 
+    @media (min-width: $breakpoint-mobile)
+      align-self: flex-start
+
+      margin-top: 1%
+      margin-left: 30%
+
+      font-size: 2.5rem
+
   #face-image
     align-self: center
 
-    height: 15rem
-    width: 15rem
+    display: flex
+    justify-content: center
 
-    margin-top: 20%
+    margin-top: 30%
 
-    background-color: black
+    // background-color: black
 
-    border-radius: 10rem
+    border-radius: 20rem
+
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 0
+
+      width: 30vw
+      height: 100%
+
+      position: relative
+
+      justify-content: flex-start
+
+    #background
+      display: flex
+
+      width: 60%
+
+      border-bottom-right-radius: 50rem
+      border-bottom-left-radius: 50rem
+
+      z-index: -999
+
+      @media (min-width: $breakpoint-mobile)
+        height: 80%
+
+        background-color: black
+
+      img
+        align-self: flex-end
+
+        border-radius: 30rem
+
+        max-height: 100%
+        max-width: 100%
+
+        @media (min-width: $breakpoint-mobile)
+          align-self: flex-end
 
 #uxui-works
   height: 50vh
