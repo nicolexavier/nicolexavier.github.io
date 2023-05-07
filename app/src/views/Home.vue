@@ -22,7 +22,9 @@
           <span>Nara Rubens</span>
           <span>Curso de Micropigmentação</span>
         </div>
-        <div class="item-image"></div>
+        <div class="item-image">
+          <img id="nara-logo" src="@/assets/nara-logo.png" />
+        </div>
       </div>
       <div class="item">
         <div class="item-text-content">
@@ -32,7 +34,9 @@
             autorais.</span
           >
         </div>
-        <div class="item-image"></div>
+        <div class="item-image">
+          <img id="artig-logo" src="@/assets/artig-logo.png" />
+        </div>
       </div>
     </section>
 
@@ -101,7 +105,7 @@ export default defineComponent({
 <style lang="sass">
 $base-color-green: #024A59
 $base-color-orange: #BF5B05
-$base-color-grey: #CCCCCC
+$base-color-grey: white
 
 $breakpoint-mobile: 400px
 
@@ -245,10 +249,13 @@ $breakpoint-mobile: 400px
           align-self: flex-end
 
 #uxui-works
-  height: 50vh
+  height: 47vh
 
   display: flex
   flex-direction: column
+
+  @media (min-width: $breakpoint-mobile)
+    height: 68vh
 
   #header
     align-self: center
@@ -259,6 +266,9 @@ $breakpoint-mobile: 400px
     font-weight: 600
     font-size: 1.5rem
 
+    @media (min-width: $breakpoint-mobile)
+      font-size: 2.3rem
+
   .item
     width: 75%
 
@@ -266,9 +276,8 @@ $breakpoint-mobile: 400px
 
     padding: 1rem
 
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    justify-items: center
+    display: flex
+    flex-direction: row
     align-items: center
 
     background-color: $base-color-orange
@@ -278,16 +287,28 @@ $breakpoint-mobile: 400px
 
     transition: all 0.5s ease-in-out
 
+    @media (min-width: $breakpoint-mobile)
+      width: 30%
+      height: 15vh
+
+      justify-content: center
+
+      margin-top: 4%
+
   .item:hover
     width: 85%
+
+    @media (min-width: $breakpoint-mobile)
+      width: 40%
 
   .item-text-content
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    flex-wrap: wrap
     gap: 0.5rem
+
+    max-width: 50%
 
     text-align: center
     color: $base-color-grey
@@ -295,16 +316,42 @@ $breakpoint-mobile: 400px
     font-weight: 500
 
     :first-child
-      font-size: 1rem
+      font-size: 0.875rem
       font-weight: bold
 
-  .item-image
-    height: 5rem
-    width: 5rem
+    @media (min-width: $breakpoint-mobile)
+      font-size: 1rem
 
+      :first-child
+        font-size: 1.5rem
+
+  .item-image
     border-radius: 3rem
 
-    background-color: black
+    margin: auto
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    @media (min-width: $breakpoint-mobile)
+      width: 50%
+
+      margin: 0
+      margin-left: auto
+
+  #nara-logo
+    max-width: 35vw
+
+    @media (min-width: $breakpoint-mobile)
+      max-width: 13vw
+
+  #artig-logo
+    max-width: 20vw
+
+    @media (min-width: $breakpoint-mobile)
+      max-width: 6vw
+
 
 #ui-works
   height: 60vh
@@ -327,6 +374,11 @@ $breakpoint-mobile: 400px
     color: $base-color-grey
     font-weight: 600
     font-size: 1.4rem
+
+    @media (min-width: $breakpoint-mobile)
+      align-self: flex-start
+
+      font-size: 2.3rem
 
   .item
     margin-top: 2rem
