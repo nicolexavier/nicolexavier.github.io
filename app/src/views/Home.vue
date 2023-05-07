@@ -54,29 +54,30 @@
         <span class="orange-underline">sobre mim:</span>
       </span>
 
-      <div id="background-container"></div>
+      <div id="content-container">
+        <div id="character-image">
+          <img src="@/assets/character.png" />
+        </div>
 
-      <div id="character-image">
-        <img src="@/assets/character.png" />
-      </div>
-
-      <div id="content">
-        <p>
-          Tenho formação e pós-graduação em psicologia e atualmente venho me
-          especializando na área do UX/UI design.
-        </p>
-        <p>
-          O interesse surgiu a partir do desejo de maior liberdade criativa. Ter
-          a possibilidade de criar interfaces, trabalhar com elementos visuais
-          sendo algo que me traz imensa curiosidade e me leva a constante busca
-          por conhecimento, sempre me impulsionando a buscar inovação.
-        </p>
-        <p>
-          Procuro unir este meu lado que preza pelo visual, ao lado o qual
-          investi muito estudo e apreço que é a psicologia buscando o bem-estar
-          e qualidade de vida do indivíduo e usuário levando a importantes
-          características de um bom ux/ui designer.
-        </p>
+        <div id="content">
+          <p>
+            Tenho formação e pós-graduação em psicologia e atualmente venho me
+            especializando na área do UX/UI design.
+          </p>
+          <p>
+            O interesse surgiu a partir do desejo de maior liberdade criativa.
+            Ter a possibilidade de criar interfaces, trabalhar com elementos
+            visuais sendo algo que me traz imensa curiosidade e me leva a
+            constante busca por conhecimento, sempre me impulsionando a buscar
+            inovação.
+          </p>
+          <p>
+            Procuro unir este meu lado que preza pelo visual, ao lado o qual
+            investi muito estudo e apreço que é a psicologia buscando o
+            bem-estar e qualidade de vida do indivíduo e usuário levando a
+            importantes características de um bom ux/ui designer.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -389,15 +390,16 @@ $breakpoint-mobile: 400px
     background-color: $base-color-grey
 
 #about
-  height: 90vh
-
-  padding-bottom: 7vh
+  height: 117vh
 
   position: relative
 
   display: flex
   flex-direction: column
   align-items: center
+
+  @media (min-width: $breakpoint-mobile)
+    height: 60vh
 
   #header
     margin-top: 10%
@@ -410,46 +412,72 @@ $breakpoint-mobile: 400px
 
     text-align: center
 
-  #background-container
-    position: absolute
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 3%
 
-    height: 85%
-    width: 90%
+      font-size: 2.3rem
 
-    border-top-right-radius: 10rem
-    border-top-left-radius: 10rem
+  #content-container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
-    bottom: 0
+    width: 85%
+
+    margin-top: 10%
+
+    border-top-right-radius: 9rem
+    border-top-left-radius: 9rem
 
     background-color: #B3C3C0
 
-    z-index: -999
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 3%
+
+      height: 100%
+
+      flex-direction: row
 
   #character-image
     margin-top: 15%
 
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 0
+
+      width: 15%
+
     img
       width: 9rem
-      height: 9rem
 
       object-fit: contain
+
+      @media (min-width: $breakpoint-mobile)
+        width: 100%
+
 
   #content
     position: relative
 
-    width: 80%
+    width: 85%
     height: 60%
 
-    margin: 2rem
+    margin: 3rem
 
     border: solid 0.125rem $base-color-orange
     border-left: none
 
     font-size: 0.875rem
-    font-weight: 400
+    font-weight: 500
     text-indent: 10px
     text-align: justify
     color: $base-color-green
+
+    @media (min-width: $breakpoint-mobile)
+        max-width: 50%
+
+        font-size: clamp(0.5rem, 0.8vw + 0.25rem, 1rem)
+        font-weight: 600
 
     p
       padding: 0 1rem 0 1rem
