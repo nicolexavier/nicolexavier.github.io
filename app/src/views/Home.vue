@@ -83,12 +83,12 @@
 
     <section id="footer">
       <div id="header">
-        Se quiser entrar em <span class="orange-underline">contato:</span>
+        Entre em <span class="orange-underline">contato:</span>
       </div>
       <div id="content">
+        <div class="item"><button>nicolexavierp@gmail.com</button></div>
         <div class="item"><button>Behance</button></div>
         <div class="item"><button>LinkedIn</button></div>
-        <div class="item"><button>nicolexavierp@gmail.com</button></div>
         <div class="item"><button>Currículo</button></div>
       </div>
     </section>
@@ -390,7 +390,7 @@ $breakpoint-mobile: 400px
     background-color: $base-color-grey
 
 #about
-  height: 117vh
+  max-height: 100%
 
   position: relative
 
@@ -462,12 +462,12 @@ $breakpoint-mobile: 400px
     width: 85%
     height: 60%
 
-    margin: 3rem
+    margin: 9%
 
     border: solid 0.125rem $base-color-orange
     border-left: none
 
-    font-size: 0.875rem
+    font-size: clamp(0.8rem, 1vw + 0.5rem, 2rem)
     font-weight: 500
     text-indent: 10px
     text-align: justify
@@ -478,6 +478,9 @@ $breakpoint-mobile: 400px
 
         font-size: clamp(0.5rem, 0.8vw + 0.25rem, 1rem)
         font-weight: 600
+
+        margin: 0
+        margin-left: 5%
 
     p
       padding: 0 1rem 0 1rem
@@ -503,13 +506,15 @@ $breakpoint-mobile: 400px
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: center
 
   #header
-    margin-top: 10%
-
     font-size: 1.2rem
     font-weight: 600
     color: $base-color-grey
+
+    @media (min-width: $breakpoint-mobile)
+      font-size: 2rem
 
   #content
     margin-top: 1rem
@@ -521,10 +526,11 @@ $breakpoint-mobile: 400px
 
     text-align: center
 
-    .item
-      font-size: 0.75rem
-      font-weight: 600
+    @media (min-width: $breakpoint-mobile)
+      margin-top: 3rem
+      grid-template-columns: repeat(4, 1fr)
 
+    .item
       padding: 0.5rem
 
       button
@@ -534,6 +540,11 @@ $breakpoint-mobile: 400px
 
         background: none
         border: none
+        border-bottom: dashed 1px grey
+
+        @media (min-width: $breakpoint-mobile)
+          font-size: 1rem
+          font-weight: 400
 
       button:hover
         background-color: black
