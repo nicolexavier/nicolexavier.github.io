@@ -33,6 +33,8 @@ html, body
   margin: 0
   padding: 0
 
+  background-color: #e6e6e6
+
 #app
   width: 100%
   height: 100%

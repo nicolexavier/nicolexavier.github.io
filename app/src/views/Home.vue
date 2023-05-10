@@ -182,8 +182,11 @@ $breakpoint-mobile: 400px
       font-weight: 400
 
     span
-      background-color: black
-      mix-blend-mode: difference
+      background-image: url("@/assets/color-background-sm.png")
+      background-clip: text
+      -webkit-background-clip: text
+      color: transparent
+      font-weight: bold
 
   #content-third
     align-self: center
@@ -209,8 +212,6 @@ $breakpoint-mobile: 400px
 
     margin-top: 30%
 
-    // background-color: black
-
     border-radius: 20rem
 
     @media (min-width: $breakpoint-mobile)
@@ -227,24 +228,38 @@ $breakpoint-mobile: 400px
       display: flex
 
       width: 60%
+      height: 100%
 
-      border-bottom-right-radius: 50rem
-      border-bottom-left-radius: 50rem
+      border-radius: 55rem
 
-      z-index: -999
+      -webkit-box-shadow: 0px 0px 39px 4px rgba(105,105,105,1)
+      -moz-box-shadow: 0px 0px 39px 4px rgba(105,105,105,1)
+      box-shadow: 0px 0px 39px 4px rgba(105,105,105,1)
+
+      z-index: 0
+
+      background-image: url("@/assets/color-background-sm.png")
 
       @media (min-width: $breakpoint-mobile)
         height: 80%
+
+        background-image: url("@/assets/color-background.png")
+
+        border-radius: 0
+        border-bottom-right-radius: 50rem
+        border-bottom-left-radius: 50rem
 
         background-color: black
 
       img
         align-self: flex-end
 
-        border-radius: 30rem
-
         max-height: 100%
         max-width: 100%
+
+        border-radius: 30rem
+
+        filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white)
 
         @media (min-width: $breakpoint-mobile)
           align-self: flex-end
