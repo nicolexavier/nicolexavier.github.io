@@ -14,38 +14,40 @@
 
     <section id="uxui-works">
       <span id="header">
-        Esses são alguns dos meus trabalhos de
-        <span class="orange-underline">UX/UI:</span>
-      </span>
-      <div class="item">
-        <div class="item-text-content">
-          <span>Nara Rubens</span>
-          <span>Curso de Micropigmentação</span>
-        </div>
-        <div class="item-image">
-          <img id="nara-logo" src="@/assets/nara-logo.png" />
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-text-content">
-          <span>Artig</span>
-          <span
-            >Plataforma de compartilhamento e venda de peças de arte
-            autorais.</span
-          >
-        </div>
-        <div class="item-image">
-          <img id="artig-logo" src="@/assets/artig-logo.png" />
-        </div>
-      </div>
-    </section>
-
-    <section id="ui-works">
-      <span id="header">
         E aqui tem alguns dos meus trabalhos
         <span class="orange-underline">apenas de UI:</span>
       </span>
-      <div class="item"></div>
+      <q-carousel
+        v-model="slide"
+        swipeable
+        animated
+        control-type="flat"
+        control-color="blue"
+        navigation
+        padding
+        arrows
+        class="rounded-borders"
+      >
+        <q-carousel-slide name="artig" class="column no-wrap flex-center">
+          <div class="carousel-item">
+            <img src="@/assets/artig-logo.png" id="artig-logo" />
+            <span id="header">Artig</span>
+            <div class="carousel-item-btns">
+              <q-btn outline label="UX/UI" style="color: #bf5b05"></q-btn>
+              <q-btn outline label="Apenas UI" style="color: #024a59"></q-btn>
+            </div></div
+        ></q-carousel-slide>
+
+        <q-carousel-slide name="nara" class="column no-wrap flex-center">
+          <div class="carousel-item">
+            <img src="@/assets/nara-logo.png" id="nara-logo" />
+            <span id="header">Nara Rubens (Curso)</span>
+            <div class="carousel-item-btns">
+              <q-btn outline label="UX/UI" style="color: #bf5b05"></q-btn>
+              <q-btn outline label="Apenas UI" style="color: #024a59"></q-btn>
+            </div></div
+        ></q-carousel-slide>
+      </q-carousel>
     </section>
 
     <section id="about">
@@ -96,17 +98,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "Home",
+  data() {
+    return {
+      slide: ref("artig"),
+    };
+  },
 });
 </script>
 
 <style lang="sass">
 $base-color-green: #024A59
 $base-color-orange: #BF5B05
-$base-color-grey: white
+$base-color-grey: #ededed
 
 $breakpoint-mobile: 400px
 
@@ -265,120 +272,16 @@ $breakpoint-mobile: 400px
           align-self: flex-end
 
 #uxui-works
-  height: 47vh
-
-  display: flex
-  flex-direction: column
-
-  @media (min-width: $breakpoint-mobile)
-    height: 68vh
-
-  #header
-    align-self: center
-
-    text-align: center
-
-    color: $base-color-green
-    font-weight: 600
-    font-size: 1.5rem
-
-    @media (min-width: $breakpoint-mobile)
-      font-size: 2.3rem
-
-  .item
-    width: 75%
-
-    margin-top: 10%
-
-    padding: 1rem
-
-    display: flex
-    flex-direction: row
-    align-items: center
-
-    background-color: $base-color-orange
-
-    border-top-right-radius: 5rem
-    border-bottom-right-radius: 5rem
-
-    transition: all 0.5s ease-in-out
-
-    @media (min-width: $breakpoint-mobile)
-      width: 30%
-      height: 15vh
-
-      justify-content: center
-
-      margin-top: 4%
-
-  .item:hover
-    width: 85%
-
-    @media (min-width: $breakpoint-mobile)
-      width: 40%
-
-  .item-text-content
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    gap: 0.5rem
-
-    max-width: 50%
-
-    text-align: center
-    color: $base-color-grey
-    font-size: 0.75rem
-    font-weight: 500
-
-    :first-child
-      font-size: 0.875rem
-      font-weight: bold
-
-    @media (min-width: $breakpoint-mobile)
-      font-size: 1rem
-
-      :first-child
-        font-size: 1.5rem
-
-  .item-image
-    border-radius: 3rem
-
-    margin: auto
-
-    display: flex
-    align-items: center
-    justify-content: center
-
-    @media (min-width: $breakpoint-mobile)
-      width: 50%
-
-      margin: 0
-      margin-left: auto
-
-  #nara-logo
-    max-width: 35vw
-
-    @media (min-width: $breakpoint-mobile)
-      max-width: 13vw
-
-  #artig-logo
-    max-width: 20vw
-
-    @media (min-width: $breakpoint-mobile)
-      max-width: 6vw
-
-
-#ui-works
-  height: 60vh
-
-  padding-bottom: 7vh
+  height: 70vh
 
   background-color: $base-color-green
 
   display: flex
   flex-direction: column
   align-items: center
+
+  @media (min-width: $breakpoint-mobile)
+    height: 60vh
 
   #header
     margin-top: 10%
@@ -392,17 +295,53 @@ $breakpoint-mobile: 400px
     font-size: 1.4rem
 
     @media (min-width: $breakpoint-mobile)
-      align-self: flex-start
-
+      margin-top: 2%
       font-size: 2.3rem
 
-  .item
+  .q-carousel
     margin-top: 2rem
+    margin-bottom: 2rem
 
-    width: 80%
-    height: 80%
+    max-width: 80%
 
-    background-color: $base-color-grey
+  .carousel-item
+    height: 100%
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    text-align: center
+
+    #header
+      font-size: 1.5rem
+      line-height: 2.5rem
+      overflow-wrap: break-word
+
+      max-width: 70%
+
+      margin-top: 0
+
+      color: $base-color-green
+      border-bottom: solid 0.2rem $base-color-orange
+
+    #artig-logo
+      width: 8rem
+
+    #nara-logo
+      width: 15rem
+      border: solid 3px #ff9ea9
+      border-radius: 1rem
+
+  .carousel-item-btns
+    margin-top: auto
+
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+    font-weight: bolder!important
 
 #about
   max-height: 100%
