@@ -124,7 +124,7 @@ $breakpoint-mobile: 400px
   overflow-y: scroll
 
 #introduction
-  height: 100vh
+  height: 100%
   width: 100%
 
   display: flex
@@ -344,9 +344,7 @@ $breakpoint-mobile: 400px
     font-weight: bolder!important
 
 #about
-  max-height: 100%
-
-  position: relative
+  height: auto
 
   display: flex
   flex-direction: column
@@ -409,7 +407,6 @@ $breakpoint-mobile: 400px
       @media (min-width: $breakpoint-mobile)
         width: 100%
 
-
   #content
     position: relative
 
@@ -417,6 +414,8 @@ $breakpoint-mobile: 400px
     height: 60%
 
     margin: 9%
+
+    padding: 0.5rem
 
     border: solid 0.125rem $base-color-orange
     border-left: none
@@ -428,9 +427,9 @@ $breakpoint-mobile: 400px
     color: $base-color-green
 
     @media (min-width: $breakpoint-mobile)
-        max-width: 50%
+        max-width: 60%
 
-        font-size: clamp(0.5rem, 0.8vw + 0.25rem, 1rem)
+        font-size: clamp(0.5rem, 0.6vw + 0.25rem, 1rem)
         font-weight: 600
 
         margin: 0
@@ -461,6 +460,8 @@ $breakpoint-mobile: 400px
   flex-direction: column
   align-items: center
   justify-content: center
+
+  z-index: 100
 
   #header
     font-size: 1.2rem
