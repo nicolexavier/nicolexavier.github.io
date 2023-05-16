@@ -98,10 +98,26 @@
         Entre em <span class="orange-underline">contato:</span>
       </div>
       <div id="content">
-        <div class="item"><button>nicolexavierp@gmail.com</button></div>
-        <div class="item"><button>Behance</button></div>
-        <div class="item"><button>LinkedIn</button></div>
-        <div class="item"><button>Currículo</button></div>
+        <div class="item">
+          <button><q-icon name="email" />nicolexavierp@gmail.com</button>
+        </div>
+        <div class="item">
+          <button
+            onclick="window.open('https://www.behance.net/nicolexavier2','_blank')"
+          >
+            <q-icon name="image" />Behance
+          </button>
+        </div>
+        <div class="item">
+          <button
+            onclick="window.open('https://www.linkedin.com/in/nicole-xavier-97b603262/','_blank')"
+          >
+            <q-icon name="badge" />LinkedIn
+          </button>
+        </div>
+        <div class="item">
+          <button><q-icon name="download" />Currículo</button>
+        </div>
       </div>
     </section>
   </div>
@@ -356,7 +372,7 @@ $breakpoint-mobile: 450px
     #nara-logo
       width: 12rem
 
-      margin-top: 15%
+      margin-top: 20%
 
       @media (min-width: $breakpoint-mobile)
         width: 15rem
@@ -374,6 +390,9 @@ $breakpoint-mobile: 450px
     span
       padding-right: 1rem
       padding-left: 1rem
+
+  .q-carousel__navigation-icon i
+    font-size: 13px
 
 #about
   height: auto
@@ -506,16 +525,16 @@ $breakpoint-mobile: 450px
   #content
     margin-top: 1rem
 
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
     justify-content: center
     align-items: center
 
     text-align: center
 
     @media (min-width: $breakpoint-mobile)
-      margin-top: 3rem
-      grid-template-columns: repeat(4, 1fr)
+      margin-top: 2rem
 
     .item
       padding: 0.5rem
@@ -527,14 +546,27 @@ $breakpoint-mobile: 450px
 
         background: none
         border: none
-        border-bottom: dashed 1px grey
+        border-radius: 10px
+        border: dashed 1px grey
+
+        font-size: 0.9rem
+
+        -webkit-touch-callout: text
+        -webkit-user-select: text
+        -khtml-user-select: text
+        -moz-user-select: text
+        -ms-user-select: text
+        user-select: text
 
         @media (min-width: $breakpoint-mobile)
-          font-size: 1rem
+          font-size: 1.25rem
           font-weight: 400
 
+        .q-icon
+          margin-right: 5px
+
       button:hover
-        background-color: black
+        background-color: rgb(192, 91, 5, 0.8)
 
 .orange-underline
   border-bottom: solid 0.125rem $base-color-orange
