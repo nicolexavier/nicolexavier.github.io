@@ -115,7 +115,7 @@ $base-color-green: #024A59
 $base-color-orange: #BF5B05
 $base-color-grey: #ededed
 
-$breakpoint-mobile: 400px
+$breakpoint-mobile: 450px
 
 #main-content
   height: 100%
