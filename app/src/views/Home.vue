@@ -33,18 +33,28 @@
             <img src="@/assets/artig-logo.png" id="artig-logo" />
             <span id="header">Artig</span>
             <div class="carousel-item-btns">
-              <q-btn outline label="UX/UI" style="color: #bf5b05"></q-btn>
-              <q-btn outline label="Apenas UI" style="color: #024a59"></q-btn>
+              <q-btn outline dense label="UX/UI" style="color: #bf5b05"></q-btn>
+              <q-btn
+                outline
+                dense
+                label="Apenas UI"
+                style="color: #024a59"
+              ></q-btn>
             </div></div
         ></q-carousel-slide>
 
         <q-carousel-slide name="nara" class="column no-wrap flex-center">
           <div class="carousel-item">
             <img src="@/assets/nara-logo.png" id="nara-logo" />
-            <span id="header">Nara Rubens (Curso)</span>
+            <span id="header">Landing Page (Curso)</span>
             <div class="carousel-item-btns">
-              <q-btn outline label="UX/UI" style="color: #bf5b05"></q-btn>
-              <q-btn outline label="Apenas UI" style="color: #024a59"></q-btn>
+              <q-btn outline dense label="UX/UI" style="color: #bf5b05"></q-btn>
+              <q-btn
+                outline
+                dense
+                label="Apenas UI"
+                style="color: #024a59"
+              ></q-btn>
             </div></div
         ></q-carousel-slide>
       </q-carousel>
@@ -266,8 +276,6 @@ $breakpoint-mobile: 450px
 
         border-radius: 30rem
 
-        filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white)
-
         @media (min-width: $breakpoint-mobile)
           align-self: flex-end
 
@@ -279,9 +287,6 @@ $breakpoint-mobile: 450px
   display: flex
   flex-direction: column
   align-items: center
-
-  @media (min-width: $breakpoint-mobile)
-    height: 60vh
 
   #header
     margin-top: 10%
@@ -302,46 +307,73 @@ $breakpoint-mobile: 450px
     margin-top: 2rem
     margin-bottom: 2rem
 
-    max-width: 80%
+    height: 100%
+
+    border-radius: 15rem
+
+    .q-carousel__slide
+      padding: 0
+      padding-top: 1rem
+      padding-bottom: 4rem
+
+      width: 17rem
+
+      @media (min-width: $breakpoint-mobile)
+        width: 20rem
+        padding-top: 1rem
+        padding-bottom: 4rem
 
   .carousel-item
     height: 100%
 
     display: flex
     flex-direction: column
-    justify-content: center
+    justify-content: space-between
     align-items: center
 
     text-align: center
 
     #header
-      font-size: 1.5rem
-      line-height: 2.5rem
+      font-size: 1.2rem
       overflow-wrap: break-word
 
-      max-width: 70%
-
       margin-top: 0
+
+      max-width: 70%
 
       color: $base-color-green
       border-bottom: solid 0.2rem $base-color-orange
 
+      @media (min-width: $breakpoint-mobile)
+        font-size: 1.5rem
+
     #artig-logo
       width: 8rem
 
+      @media (min-width: $breakpoint-mobile)
+        width: 9rem
+
     #nara-logo
-      width: 15rem
-      border: solid 3px #ff9ea9
-      border-radius: 1rem
+      width: 12rem
+
+      margin-top: 15%
+
+      @media (min-width: $breakpoint-mobile)
+        width: 15rem
 
   .carousel-item-btns
-    margin-top: auto
-
     display: flex
     flex-direction: column
-    gap: 1rem
+    gap: 0.5rem
 
     font-weight: bolder!important
+
+    .q-btn
+      border-radius: 1rem
+
+    span
+      padding-right: 1rem
+      padding-left: 1rem
 
 #about
   height: auto

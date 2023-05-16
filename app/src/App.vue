@@ -96,7 +96,7 @@ html, body
   font-size: clamp(0.5rem, 0.75vw + 0.25rem, 5rem)
 
   a
-    padding: 0.5rem
+    padding: 0.25rem
     padding-right: 1rem
     padding-left: 1rem
 
@@ -107,11 +107,11 @@ html, body
     text-decoration: none
 
   a:hover
-    background-color: black
+    background-color: rgb(192, 91, 5, 0.8)
 
-    -webkit-transition: all 0.75s ease-out
-    -moz-transition: all 0.75s ease-out
-    -o-transition: all 0.75s ease-out
-    -ms-transition: all 0.75s ease-out
-    transition: all 0.75s ease-out
+    -webkit-transition: all 0.5s ease-out
+    -moz-transition: all 0.5s ease-out
+    -o-transition: all 0.5s ease-out
+    -ms-transition: all 0.5s ease-out
+    transition: all 0.5s ease-out
 </style>
